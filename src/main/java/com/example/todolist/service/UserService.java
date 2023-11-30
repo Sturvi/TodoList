@@ -17,8 +17,7 @@ public class UserService {
     }
 
     public boolean checkUsername (String username) {
-        username = username.toLowerCase();
-        return userRepository.existsByUsername(username);
+        return userRepository.existsByUsernameIgnoringCase(username);
     }
 
     public User findByUsername(String username) {

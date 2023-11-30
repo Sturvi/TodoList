@@ -19,6 +19,16 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * RegistrationView is a UI component that allows users to register by entering their
+ * username, password, name, last name, and email. It uses bean validation to validate
+ * the input fields and saves the user data using the provided UserService.
+ * <p>
+ * It implements the NavigationalTools interface to allow navigation to other views.
+ * <p>
+ * The class is annotated with @Route("registration") to specify the route path for this view.
+ * It is also annotated with @AnonymousAllowed to allow access to this view without authentication.
+ */
 @Route("registration")
 @AnonymousAllowed
 public class RegistrationView extends VerticalLayout implements NavigationalTools {
@@ -55,6 +65,7 @@ public class RegistrationView extends VerticalLayout implements NavigationalTool
             if (binder.writeBeanIfValid(user)) {
                 String hashedPassword = passwordEncoder.encode(user.getPassword());
                 user.setPassword(hashedPassword);
+
                 userService.saveNewUser(user);
 
                 navigateTo("login");
@@ -73,6 +84,10 @@ public class RegistrationView extends VerticalLayout implements NavigationalTool
         // Show error message
     }
 
+    /**
+     * Binds form fields to the corresponding properties of the User object.
+     * Validates the input values based on the specified validators.
+     */
     private void bindFields() {
         Validator<String> usernameValidator = (value, context) -> {
             if (userService.checkUsername(value)) {
