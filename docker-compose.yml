@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:13
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - "45461:45461"
+    environment:
+      - POSTGRES_DB=vaadinstart
+      - POSTGRES_USER=vaadinstart
+      - POSTGRES_PASSWORD=vaadinstart
