@@ -18,6 +18,7 @@ import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.spring.annotation.VaadinSessionScope;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -27,7 +28,7 @@ import org.vaadin.lineawesome.LineAwesomeIcon;
  * The main view is a top-level placeholder for other views.
  */
 @Component
-@Scope("prototype")
+@VaadinSessionScope
 public class MainLayout extends AppLayout implements NavigationalTools{
     private static final String PROJECT_NAME_PLACEHOLDER = "Enter project name";
     private static final String MENU_TOGGLE_LABEL = "Menu toggle";
