@@ -3,6 +3,7 @@ package com.example.todolist.views.registration;
 import com.example.todolist.model.user.User;
 import com.example.todolist.service.UserService;
 import com.example.todolist.views.NavigationalTools;
+import com.example.todolist.views.ViewsEnum;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.H1;
@@ -68,7 +69,7 @@ public class RegistrationView extends VerticalLayout implements NavigationalTool
 
                 userService.saveNewUser(user);
 
-                navigateTo("login");
+                navigateTo(ViewsEnum.LOGIN.getView());
             } else {
                 showError();
             }

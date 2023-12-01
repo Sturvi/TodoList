@@ -34,6 +34,6 @@ public class User extends AbstractEntity {
     @NonNull
     private RoleEnum role = RoleEnum.USER;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Project> projects;
 }
