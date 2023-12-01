@@ -1,11 +1,12 @@
-package com.example.todolist.model;
+package com.example.todolist.model.user;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
+import com.example.todolist.model.AbstractEntity;
+import com.example.todolist.model.task.Project;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
@@ -14,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @SuperBuilder
 @NoArgsConstructor
-public class User extends  AbstractEntity{
+public class User extends AbstractEntity {
 
     @NonNull
     private String username;
@@ -32,4 +33,7 @@ public class User extends  AbstractEntity{
     @Enumerated(EnumType.STRING)
     @NonNull
     private RoleEnum role = RoleEnum.USER;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Project> projects;
 }

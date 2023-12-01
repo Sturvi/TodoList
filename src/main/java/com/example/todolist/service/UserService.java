@@ -1,6 +1,6 @@
 package com.example.todolist.service;
 
-import com.example.todolist.model.User;
+import com.example.todolist.model.user.User;
 import com.example.todolist.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

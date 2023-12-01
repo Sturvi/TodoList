@@ -1,6 +1,6 @@
 package com.example.todolist.views.registration;
 
-import com.example.todolist.model.User;
+import com.example.todolist.model.user.User;
 import com.example.todolist.service.UserService;
 import com.example.todolist.views.NavigationalTools;
 import com.vaadin.flow.component.button.Button;

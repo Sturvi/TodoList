@@ -1,6 +1,6 @@
-package com.example.todolist.model.mappers;
+package com.example.todolist.model.user.mappers;
 
-import com.example.todolist.model.User;
+import com.example.todolist.model.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
