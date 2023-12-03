@@ -37,7 +37,7 @@ public class LoginView extends VerticalLayout implements NavigationalTools {
         login.setAction("login");
 
         Button registerButton = new Button("Register", event -> {
-            navigateTo(ViewsEnum.REGISTRATION.getView());
+            navigateTo(ViewsEnum.REGISTRATION);
         });
 
         HorizontalLayout horizontalLayout = new HorizontalLayout();

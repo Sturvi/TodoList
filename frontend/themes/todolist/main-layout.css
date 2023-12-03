@@ -18,3 +18,28 @@ vaadin-side-nav-item vaadin-icon {
 [slot="drawer"]:is(header, footer):is(:empty) {
   display: none;
 }
+
+.small-button {
+  margin: 0;
+  padding: 0;
+  line-height: 1; // Убираем лишнее пространство вокруг иконки
+background: transparent; // Прозрачный фон
+border: none; // Убираем границу
+}
+
+.icon-error {
+  color: var(--lumo-text-color); // Цвет иконки - красный
+}
+
+.text-error {
+  cursor: pointer; // Курсор в виде руки для интерактивности
+color: var(--lumo-error-color); // Цвет текста - красный
+}
+
+.my-horizontal-layout {
+// Стили для HorizontalLayout
+display: flex;
+  align-items: center;
+  gap: 8px; // Расстояние между элементами
+}
+

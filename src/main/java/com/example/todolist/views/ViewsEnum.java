@@ -4,7 +4,9 @@ public enum ViewsEnum {
     LOGIN("login"),
     ABOUT("about"),
     HELLO("hello"),
-    REGISTRATION("registration");
+    REGISTRATION("registration"),
+    PROJECT ("/project"),
+    PAGE404("404");
 
     private String view;
 

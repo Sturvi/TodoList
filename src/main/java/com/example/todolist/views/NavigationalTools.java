@@ -27,8 +27,12 @@ public interface NavigationalTools {
      *
      * @param page the page to navigate to
      */
-    default void navigateTo(String page) {
-        UI.getCurrent().access(() -> UI.getCurrent().navigate(page));
+    default void navigateTo(ViewsEnum viewsEnum) {
+        UI.getCurrent().access(() -> UI.getCurrent().navigate(viewsEnum.getView()));
+    }
+
+    default void navigateTo(ViewsEnum viewsEnum, String parametr) {
+        UI.getCurrent().access(() -> UI.getCurrent().navigate(viewsEnum.getView() + "/" + parametr));
     }
 
     /**

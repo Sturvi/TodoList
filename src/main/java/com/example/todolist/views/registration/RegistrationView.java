@@ -69,7 +69,7 @@ public class RegistrationView extends VerticalLayout implements NavigationalTool
 
                 userService.saveNewUser(user);
 
-                navigateTo(ViewsEnum.LOGIN.getView());
+                navigateTo(ViewsEnum.LOGIN);
             } else {
                 showError();
             }
